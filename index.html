@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multiple Choice Exam</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="/_sdk/element_sdk.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
@@ -15,9 +14,9 @@
     .correct { background: #059669 !important; color: white !important; border-color: #059669 !important; }
     .incorrect { background: #dc2626 !important; color: white !important; border-color: #dc2626 !important; }
     .selected-opt { background: #2563eb !important; color: white !important; border-color: #2563eb !important; }
+    .bg-slate-750 { background-color: #263244; }
   </style>
   <style>body { box-sizing: border-box; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full">
   <div id="app" class="h-full w-full bg-slate-900 text-white overflow-auto p-6">
@@ -33,9 +32,66 @@
   </a></p>
      </div>
     </div>
+
+    <div id="chapterArea" class="hidden fixed inset-0 flex items-center justify-center bg-slate-900 p-6">
+     <div class="w-full max-w-2xl bg-slate-800 border border-slate-700 rounded-2xl p-8 shadow-xl">
+      <h2 class="text-3xl font-bold text-emerald-400 mb-2">Choose Questions</h2>
+      <p class="text-slate-400 mb-6">Select one chapter or practice all questions.</p>
+      <div class="grid gap-3 mb-6">
+       <button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter1">
+  08 LEED v4_SS_Sustainable Sites 
+  <span class="block text-sm text-slate-400 font-normal">Questions 1–7</span>
+</button>
+
+<button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter2">
+  10 LEED v4_SS_Sustainable Sites-ii 
+  <span class="block text-sm text-slate-400 font-normal">Questions 8–16</span>
+</button>
+
+<button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter3">
+  12 LEED v4_WE_Water Efficiency 
+  <span class="block text-sm text-slate-400 font-normal">Questions 17–37</span>
+</button>
+
+<button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter4">
+  Class6 Location & Transportation 0224_2026 
+  <span class="block text-sm text-slate-400 font-normal">Questions 38–50</span>
+</button>
+
+<button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter5">
+  Class15-1 Materials and Resources 0428_2026 
+  <span class="block text-sm text-slate-400 font-normal">Questions 51–67</span>
+</button>
+
+<button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter6">
+  Class15-2 Materials and Resources 0505_2026 
+  <span class="block text-sm text-slate-400 font-normal">Questions 68–78</span>
+</button>
+<button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-slate-400 font-semibold transition" data-set="all">
+  All Questions
+  <span class="block text-sm text-slate-400 font-normal">Questions 1–78</span>
+</button>
+      </div>
+      <button id="shuffleToggle" class="w-full bg-slate-700 hover:bg-slate-600 px-5 py-3 rounded-lg font-semibold transition" aria-pressed="false">Shuffle: Off</button>
+      <button id="backToStart" class="mt-3 w-full text-slate-400 hover:text-white px-5 py-2 rounded-lg font-medium transition">Back</button>
+     </div>
+    </div>
     <header id="header" class="hidden flex items-center justify-between mb-8">
-     <h1 id="title" class="text-2xl font-bold text-emerald-400">CE 581-Questions from The Slides</h1><button id="killBtn" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-medium transition"> <i data-lucide="rotate-ccw" style="width:16px;height:16px;"></i> Restart </button>
-    </header>
+  <h1 id="title" class="text-2xl font-bold text-emerald-400">
+    CE 581-Questions from The Slides
+  </h1>
+
+  <div class="flex gap-2">
+    <button id="menuBtn" class="flex items-center gap-2 bg-slate-600 hover:bg-slate-700 px-4 py-2 rounded-lg font-medium transition">
+      Main Menu
+    </button>
+
+    <button id="killBtn" class="flex items-center gap-2 bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-medium transition">
+      <i data-lucide="rotate-ccw" style="width:16px;height:16px;"></i>
+      Restart
+    </button>
+  </div>
+</header>
     <div id="stats" class="hidden mb-6 flex gap-4 text-sm font-medium">
      <span class="bg-slate-800 px-3 py-1 rounded-full">Round: <span id="roundNum">1</span></span> <span class="bg-slate-800 px-3 py-1 rounded-full">Remaining: <span id="remainCount">3</span></span> <span class="bg-emerald-900 px-3 py-1 rounded-full text-emerald-300">Correct: <span id="correctCount">0</span></span> <span class="bg-red-900 px-3 py-1 rounded-full text-red-300">Wrong: <span id="wrongCount">0</span></span>
     </div>
@@ -64,7 +120,7 @@ const allQuestions = [
     "multi": 3
   },
   {
-    "text": "Construction of a project has started prior to the project owner’s decision to pursue LEED certification. The jurisdiction in which the project resides requires the implementation of ESC measures that are stricter than the 2012 EPA CGP. Which statement about the project's ability to achieve SS Prerequisite-Construction Activ Pollution Prevention is true?",
+    "text": "Construction of a project has started prior to the project owner’s decision to pursue LEED certification. The jurisdiction in which the project resides requires the implementation of ESC measures that are stricter than the 2012 EPA CGP. Which statement about the project's ability to achieve SS Prerequisite-Construction Activity Pollution Prevention is true?",
     "options": [
       { "id": "A", "text": "The project cannot earn the prerequisite, as construction started before the project began to pursue LEED certification" },
       { "id": "B", "text": "The project should not follow the local code's ESC requirements but should switch to a plan compliant with the CGP requirements" },
@@ -556,36 +612,16 @@ const allQuestions = [
     "multi": 1
   },
   {
-  "text": "Based on the following transit service summary for a project pursuing LT Credit-Access to Quality Transit, which statement is correct?<br>\
-  <table style='width:100%; border-collapse:collapse; text-align:center;'>\
-    <tr style='background:#1e293b; color:white;'>\
-      <th style='padding:8px; border:1px solid #475569;'>Transit Type</th>\
-      <th style='padding:8px; border:1px solid #475569;'>Weekday Trips</th>\
-      <th style='padding:8px; border:1px solid #475569;'>Saturday Trips</th>\
-      <th style='padding:8px; border:1px solid #475569;'>Sunday Trips</th>\
-    </tr>\
-    <tr>\
-      <td style='padding:8px; border:1px solid #475569;'>Light Rail</td>\
-      <td style='padding:8px; border:1px solid #475569;'>85</td>\
-      <td style='padding:8px; border:1px solid #475569;'>65</td>\
-      <td style='padding:8px; border:1px solid #475569;'>0</td>\
-    </tr>\
-    <tr>\
-      <td style='padding:8px; border:1px solid #475569;'>Commuter Rail</td>\
-      <td style='padding:8px; border:1px solid #475569;'>62</td>\
-      <td style='padding:8px; border:1px solid #475569;'>14</td>\
-      <td style='padding:8px; border:1px solid #475569;'>50</td>\
-    </tr>\
-  </table><br><br>",
-  "options": [
-    { "id": "A", "text": "The light rail service does not provide enough weekend trips" },
-    { "id": "B", "text": "The commuter rail would be counted as having no weekend trips" },
-    { "id": "C", "text": "The light rail service does not provide enough weekday trips" },
-    { "id": "D", "text": "The commuter rail weekend trips can be averaged to meet the minimum requirement and determine the number of points" }
-  ],
-  "answers": ["D"],
-  "multi": 1
-},
+    "text": "Based on the following transit service summary for a project pursuing LT Credit-Access to Quality Transit, which statement is correct?",
+    "options": [
+      { "id": "A", "text": "The light rail service does not provide enough weekend trips" },
+      { "id": "B", "text": "The commuter rail would be counted as having no weekend trips" },
+      { "id": "C", "text": "The light rail service does not provide enough weekday trips" },
+      { "id": "D", "text": "The commuter rail weekend trips can be averaged to meet the minimum requirement and determine the number of points" }
+    ],
+    "answers": ["D"],
+    "multi": 1
+  },
   {
     "text": "A school’s project is located within a ½-mile walking distance for 714 students in grades 9-12. The school is expected to have 1200 students when complete. The school has built two walking and biking routes. The school also has a busing system that uses 7 buses. What is true about the project's ability to earn LT Credit-Access to Quality Transit?",
     "options": [
@@ -733,59 +769,59 @@ const allQuestions = [
   {
     "text": "Which of the following is a correct statement for MR Credit-PBT Source Reduction - Mercury for a Healthcare project? (select 2)",
     "options": [
-      { "id": "A", "text": "Circular fluorescent lamps are prohibited because of the high rate of breakage and associated risk of exposure for staff and patients to contamination" },
+      { "id": "A", "text": "Circular fluorescent lamps are prohibited because of the high rate of breakage" },
       { "id": "B", "text": "Probe-start metal halide lamps are prohibited because of their relatively short lamp life" },
-      { "id": "C", "text": "If the credit criteria and local code or regulations conflict, affected lamps must still be included" },
-      { "id": "D", "text": "Lamp-life requirements in this credit must be met only for new mercury-containing lamps, and existing lamps are excluded" }
-  ],
-  "answers": ["A", "B"],
-  "multi": 2
+      { "id": "C", "text": "If the credit criteria and local code conflict, affected lamps must still be included" },
+      { "id": "D", "text": "Lamp-life requirements apply only to new lamps" }
+    ],
+    "answers": ["A", "B"],
+    "multi": 2
   },
   {
     "text": "Which of the following are correct statements concerning MR Credit-PBT Source Reduction - Lead, Cadmium, and Copper? (select 2)",
     "options": [
-    { "id": "A", "text": "Pipes, faucets, and other plumbing products that are labeled \"lead-free\" to comply with the U.S. Safe Drinking Water Act provide adequate compliance with this credit" },
-    { "id": "B", "text": "For renovations, existing products and materials that are not in the scope of the work must still be compliant" },
-    { "id": "C", "text": "Copper used for MRI shielding equipment and lead used for radiation shielding are exempt from the credit requirements" },
-    { "id": "D", "text": "Green Seal certification is satisfactory to document lead- and cadmium-free paints, though project teams should check with manufacturers that both the paint base and the pigment are lead and cadmium-free" }
-  ],
-  "answers": ["C", "D"],
-  "multi": 2
+      { "id": "A", "text": "Lead-free labeled plumbing products provide adequate compliance" },
+      { "id": "B", "text": "Existing materials not in scope must still be compliant" },
+      { "id": "C", "text": "Copper for MRI shielding and lead for radiation shielding are exempt" },
+      { "id": "D", "text": "Green Seal certification can document compliant paints" }
+    ],
+    "answers": ["C", "D"],
+    "multi": 2
   },
   {
     "text": "A project is pursuing Option 4 of MR Credit-Building Life Cycle Impact Reduction. The LCA model results in a 10% reduction from baseline in three categories and a 6% increase in global warming. Which of the following statements are correct? (select 2)",
     "options": [
-    { "id": "A", "text": "The project team achieved this credit and should proceed to documentation" },
-    { "id": "B", "text": "The project team should evaluate different structural systems to reduce the 6% increase in global warming from the baseline" },
-    { "id": "C", "text": "The project team should decrease the gross floor area of the proposed building and run the model again" },
-    { "id": "D", "text": "The project team should change the orientation of the baseline building" },
-    { "id": "E", "text": "The project team should look into different enclosure alternatives" }
-  ],
-  "answers": ["B", "E"],
-  "multi": 2
+      { "id": "A", "text": "The project achieved the credit" },
+      { "id": "B", "text": "Evaluate different structural systems" },
+      { "id": "C", "text": "Decrease gross floor area" },
+      { "id": "D", "text": "Change baseline orientation" },
+      { "id": "E", "text": "Evaluate enclosure alternatives" }
+    ],
+    "answers": ["B", "E"],
+    "multi": 2
   },
   {
-  "text": "A project team is attempting to achieve 5 points for a project that includes the renovation of a historic designated warehouse into an office building. The surface area of the existing building structure and enclosure is 200,000 ft². How much of the existing building will need to be reused to earn 5 points for MR Credit-Building Life-Cycle Impact Reduction?",
-  "options": [
-    { "id": "A", "text": "25,000 ft²" },
-    { "id": "B", "text": "50,000 ft²" },
-    { "id": "C", "text": "150,000 ft²" },
-    { "id": "D", "text": "200,000 ft²" },
-    { "id": "E", "text": "There is no threshold for compliance." }
-  ],
-  "answers": ["E"],
-  "multi": 1
-},
-  {
-    "text": "A project team is pursuing MR Credit Building Life-Cycle Impact Reduction for a new project. Which one of the following options is applicable if a product is not included in the LCA tool's data set?",
+    "text": "A project team is attempting to achieve 5 points for renovating a historic warehouse. How much of the existing building must be reused?",
     "options": [
-    { "id": "A", "text": "The product cannot be included in the LCA" },
-    { "id": "B", "text": "If the product has a critically reviewed LCA or EPD, the results of the product's impact measure can be added to the LCA" },
-    { "id": "C", "text": "Another option should be pursued for this credit" },
-    { "id": "D", "text": "This credit cannot be achieved" }
-  ],
-  "answers": ["B"],
-  "multi": 1
+      { "id": "A", "text": "25,000 ft2" },
+      { "id": "B", "text": "50,000 ft2" },
+      { "id": "C", "text": "150,000 ft2" },
+      { "id": "D", "text": "200,000 ft2" },
+      { "id": "E", "text": "There is no threshold for compliance" }
+    ],
+    "answers": ["E"],
+    "multi": 1
+  },
+  {
+    "text": "A project team is pursuing MR Credit-Building Life-Cycle Impact Reduction for a new project. Which one of the following options is applicable if a product is not included in the LCA tool's data set?",
+    "options": [
+      { "id": "A", "text": "The product cannot be included" },
+      { "id": "B", "text": "Use critically reviewed LCA or EPD data" },
+      { "id": "C", "text": "Pursue another option" },
+      { "id": "D", "text": "Credit cannot be achieved" }
+    ],
+    "answers": ["B"],
+    "multi": 1
   },
   {
     "text": "Which one of the following analysis types needs to be conducted for a whole-building LCA?",
@@ -810,17 +846,17 @@ const allQuestions = [
     "multi": 1
   },
   {
-  "text": "A Healthcare project has specified paint products with EPDs as listed below. Which one of the following is correct about the products' eligibility for MR Credit-Building Product Disclosure and Optimization - Environmental Product Declarations?<br><ul><li>P1 - white, matte-finish paint made by company A</li><li>P2 - beige, matte-finish paint (same paint, different color as P1) made by company A</li><li>P3 - white, matte-finish paint made by company B</li><li>P4 - white, satin-finish paint made by company B</li></ul>",
-  "options": [
-    { "id": "A", "text": "Two products and two manufacturers count towards the credit" },
-    { "id": "B", "text": "Three products and only one manufacturer count towards the credit" },
-    { "id": "C", "text": "Three products and two manufacturers count towards the credit" },
-    { "id": "D", "text": "Four products and two manufacturers all count towards the credit" }
-  ],
-  "answers": ["C"],
-  "multi": 1
-},
- {
+    "text": "A Healthcare project has specified paint products with EPDs. Which one of the following is correct about eligibility?",
+    "options": [
+      { "id": "A", "text": "Two products and two manufacturers count" },
+      { "id": "B", "text": "Three products and one manufacturer count" },
+      { "id": "C", "text": "Three products and two manufacturers count" },
+      { "id": "D", "text": "Four products and two manufacturers count" }
+    ],
+    "answers": ["C"],
+    "multi": 1
+  },
+{
     "text": "Which one of the following should be submitted to document all qualifying products to meet Option 1 of MR Credit-Building Product Disclosure and Optimization - Sourcing of Raw Materials?",
     "options": [
       { "id": "A", "text": "Environmental product declarations (EPDs)" },
@@ -958,7 +994,7 @@ const allQuestions = [
   }
 ];
 
-// Remove duplicate questions by exact question text before starting the exam.
+// The preview includes the first 10 questions to keep the canvas responsive.
 const uniqueQuestions = [];
 const seenQuestions = new Set();
 allQuestions.forEach(q => {
@@ -976,7 +1012,8 @@ let correctTotal = 0;
 let wrongTotal = 0;
 let wrongThisRound = [];
 let selectedOptions = [];
-
+let shuffleEnabled = false;
+let selectedQuestionSet = 'all';
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -985,13 +1022,30 @@ function shuffle(arr) {
   }
   return a;
 }
-
-function startExam() {
+function showChapterSelection() {
   document.getElementById('welcomeArea').classList.add('hidden');
+  document.getElementById('chapterArea').classList.remove('hidden');
+}
+
+function getQuestionSet(setName) {
+  if (setName === 'chapter1') return uniqueQuestions.slice(0, 7);   // 1–7
+  if (setName === 'chapter2') return uniqueQuestions.slice(7, 16);  // 8–16
+  if (setName === 'chapter3') return uniqueQuestions.slice(16, 37); // 17–37
+  if (setName === 'chapter4') return uniqueQuestions.slice(37, 50); // 38–50
+  if (setName === 'chapter5') return uniqueQuestions.slice(50, 67); // 51–67
+  if (setName === 'chapter6') return uniqueQuestions.slice(67, 78); // 68–78
+  return uniqueQuestions.slice(0, 78); // all questions
+}
+
+function startExam(setName = selectedQuestionSet) {
+  selectedQuestionSet = setName;
+  document.getElementById('welcomeArea').classList.add('hidden');
+  document.getElementById('chapterArea').classList.add('hidden');
   document.getElementById('header').classList.remove('hidden');
   document.getElementById('stats').classList.remove('hidden');
 
-  currentPool = shuffle([...uniqueQuestions]);
+  const chosenQuestions = getQuestionSet(selectedQuestionSet);
+  currentPool = shuffleEnabled ? shuffle(chosenQuestions) : [...chosenQuestions];
   currentIndex = 0;
   round = 1;
   correctTotal = 0;
@@ -1009,7 +1063,7 @@ function resetCountersForNewRound() {
 }
 
 function startNextRound() {
-  currentPool = shuffle([...wrongThisRound]);
+  currentPool = shuffleEnabled ? shuffle(wrongThisRound) : [...wrongThisRound];
   wrongThisRound = [];
   currentIndex = 0;
   round++;
@@ -1038,7 +1092,7 @@ function showQuestion() {
   }
 
   const q = currentPool[currentIndex];
-  const shuffledOpts = shuffle(q.options);
+  const shuffledOpts = shuffleEnabled ? shuffle(q.options) : q.options;
   selectedOptions = [];
 
   const isMulti = q.multi > 1;
@@ -1097,11 +1151,9 @@ function handleSingleSelect(btn, q, buttons) {
   const chosen = btn.dataset.id;
   const isCorrect = q.answers.includes(chosen);
 
-  // Mark your selection
   btn.classList.add(isCorrect ? 'correct' : 'incorrect');
   btn.classList.remove('selected-opt');
   
-  // Show all correct answers in green
   buttons.forEach(b => { 
     if (q.answers.includes(b.dataset.id) && b !== btn) {
       b.classList.add('correct');
@@ -1173,47 +1225,34 @@ function showFeedback(correct) {
     : '<span class="text-red-400 font-semibold">✗ Incorrect — correct answer highlighted in green</span>';
 }
 
-document.getElementById('startBtn').addEventListener('click', startExam);
-document.getElementById('killBtn').addEventListener('click', startExam);
-document.getElementById('restartDone').addEventListener('click', startExam);
-
-// Element SDK
-const defaultConfig = { exam_title: "CE 581 Mock Exam", background_color: "#0f172a", accent_color: "#10b981", text_color: "#ffffff", surface_color: "#1e293b", action_color: "#2563eb", font_family: "DM Sans", font_size: 16 };
-
-window.elementSdk.init({
-  defaultConfig,
-  onConfigChange: async (config) => {
-    const title = config.exam_title || defaultConfig.exam_title;
-    document.getElementById('title').textContent = title;
-    const bg = config.background_color || defaultConfig.background_color;
-    const accent = config.accent_color || defaultConfig.accent_color;
-    const txt = config.text_color || defaultConfig.text_color;
-    const surface = config.surface_color || defaultConfig.surface_color;
-    const action = config.action_color || defaultConfig.action_color;
-    const font = config.font_family || defaultConfig.font_family;
-    const size = config.font_size || defaultConfig.font_size;
-    document.getElementById('app').style.background = bg;
-    document.getElementById('app').style.color = txt;
-    document.getElementById('title').style.color = accent;
-    document.getElementById('title').style.fontFamily = `${font}, sans-serif`;
-    document.body.style.fontSize = size + 'px';
-  },
-  mapToCapabilities: (config) => ({
-    recolorables: [
-      { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
-      { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
-      { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
-      { get: () => config.accent_color || defaultConfig.accent_color, set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } },
-      { get: () => config.action_color || defaultConfig.action_color, set: (v) => { config.action_color = v; window.elementSdk.setConfig({ action_color: v }); } }
-    ],
-    borderables: [],
-    fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
-    fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
-  }),
-  mapToEditPanelValues: (config) => new Map([["exam_title", config.exam_title || defaultConfig.exam_title]])
+document.getElementById('startBtn').addEventListener('click', showChapterSelection);
+document.getElementById('backToStart').addEventListener('click', () => {
+  document.getElementById('chapterArea').classList.add('hidden');
+  document.getElementById('welcomeArea').classList.remove('hidden');
 });
-
-lucide.createIcons();
+document.querySelectorAll('.chapter-btn').forEach(btn => {
+  btn.addEventListener('click', () => startExam(btn.dataset.set));
+});
+document.getElementById('shuffleToggle').addEventListener('click', () => {
+  shuffleEnabled = !shuffleEnabled;
+  const btn = document.getElementById('shuffleToggle');
+  btn.textContent = shuffleEnabled ? 'Shuffle: On' : 'Shuffle: Off';
+  btn.setAttribute('aria-pressed', String(shuffleEnabled));
+  btn.classList.toggle('bg-blue-600', shuffleEnabled);
+  btn.classList.toggle('hover:bg-blue-700', shuffleEnabled);
+  btn.classList.toggle('bg-slate-700', !shuffleEnabled);
+  btn.classList.toggle('hover:bg-slate-600', !shuffleEnabled);
+});
+document.getElementById('killBtn').addEventListener('click', () => startExam(selectedQuestionSet));
+document.getElementById('restartDone').addEventListener('click', () => startExam(selectedQuestionSet));
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('header').classList.add('hidden');
+  document.getElementById('stats').classList.add('hidden');
+  document.getElementById('questionArea').innerHTML = '';
+  document.getElementById('doneArea').classList.add('hidden');
+  document.getElementById('chapterArea').classList.remove('hidden');
+});
+if (window.lucide) lucide.createIcons();
 </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f76d2b994d1f7bd',t:'MTc3ODA1ODMyNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ </body>
 </html>
