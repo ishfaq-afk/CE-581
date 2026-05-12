@@ -55,21 +55,36 @@
 
 <button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter4">
   Class6 Location & Transportation 0224_2026 
-  <span class="block text-sm text-slate-400 font-normal">Questions 38–50</span>
+  <span class="block text-sm text-slate-400 font-normal">Questions 38–56</span>
 </button>
 
 <button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter5">
   Class15-1 Materials and Resources 0428_2026 
-  <span class="block text-sm text-slate-400 font-normal">Questions 51–67</span>
+  <span class="block text-sm text-slate-400 font-normal">Questions 57–73</span>
 </button>
 
 <button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter6">
   Class15-2 Materials and Resources 0505_2026 
-  <span class="block text-sm text-slate-400 font-normal">Questions 68–78</span>
+  <span class="block text-sm text-slate-400 font-normal">Questions 74–84</span>
 </button>
+<button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter7">
+  Class5 INTEGRATIVE 0217_2026 
+  <span class="block text-sm text-slate-400 font-normal">Questions 85–91</span>
+</button>
+
+<button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter8">
+  13 LEED v4_Energy and Atosphere 
+  <span class="block text-sm text-slate-400 font-normal">Questions 92–106</span>
+</button>
+
+<button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-emerald-400 font-semibold transition" data-set="chapter9">
+  14 LEED v4_Energy and Atosphere-2
+  <span class="block text-sm text-slate-400 font-normal">Questions 107–124</span>
+</button>
+
 <button class="chapter-btn w-full text-left px-5 py-4 rounded-xl border-2 border-slate-600 bg-slate-750 hover:border-slate-400 font-semibold transition" data-set="all">
   All Questions
-  <span class="block text-sm text-slate-400 font-normal">Questions 1–78</span>
+  <span class="block text-sm text-slate-400 font-normal">Questions 1–124</span>
 </button>
       </div>
       <button id="shuffleToggle" class="w-full bg-slate-700 hover:bg-slate-600 px-5 py-3 rounded-lg font-semibold transition" aria-pressed="false">Shuffle: Off</button>
@@ -655,6 +670,17 @@ const allQuestions = [
     "answers": ["B"],
     "multi": 1
   },
+{
+  "text": "A 100-unit residential building in an urban area has 300 residents, 60 peak visitors, and no employees. How many long-term and short-term bicycle storage spaces would be required to achieve LT Credit-Bicycle Facilities?",
+  "options": [
+    { "id": "A", "text": "30 long-term storage spaces and 2 short-term storage spaces" },
+    { "id": "B", "text": "90 long-term storage spaces and 4 short-term storage spaces" },
+    { "id": "C", "text": "100 long-term storage spaces and 1 short-term storage space" },
+    { "id": "D", "text": "100 long-term storage spaces and 4 short-term storage spaces" }
+  ],
+  "answers": ["D"],
+  "multi": 1
+},
   {
     "text": "A design team is locating short-term and long-term bicycle storage on a site plan. Which one of the following is correct?",
     "options": [
@@ -664,6 +690,61 @@ const allQuestions = [
       { "id": "D", "text": "The storage can be off site" }
     ],
     "answers": ["B"],
+    "multi": 1
+  },
+{
+    "text": "A university housing project with 100 one-bedroom apartments has a baseline parking capacity of one parking space/unit per the ITE Transportation Planning Handbook. The project will earn 1 point under LT Credit-Surrounding Density and Diverse Uses, but will not earn LT Credit-Access to Quality Transit. The project includes off-street parking. How many preferred parking spaces for carpools must the project include for LT Credit-Reduced Parking Footprint?",
+    "options": [
+      { "id": "A", "text": "0 spaces" },
+      { "id": "B", "text": "2 spaces" },
+      { "id": "C", "text": "3 spaces" },
+      { "id": "D", "text": "5 spaces" }
+    ],
+    "answers": ["C"],
+    "multi": 1
+  },
+  {
+    "text": "A university housing project with 50 one-bedroom apartments has a baseline parking capacity of 1 parking space/unit per the ITE Transportation Planning Handbook. The project will earn 1 point under LT Credit-Surrounding Density and Diverse Uses and 1 point under LT Credit-Access to Quality Transit. What is the maximum number of parking spaces the project can have and still earn LT Credit-Reduced Parking Footprint?",
+    "options": [
+      { "id": "A", "text": "10 spaces" },
+      { "id": "B", "text": "20 spaces" },
+      { "id": "C", "text": "30 spaces" },
+      { "id": "D", "text": "40 spaces" }
+    ],
+    "answers": ["C"],
+    "multi": 1
+  },
+  {
+    "text": "Which EVSE qualification is required for LT Credit-Green Vehicles?",
+    "options": [
+      { "id": "A", "text": "Level 1, 2, or 3 charging capacity" },
+      { "id": "B", "text": "No direct connection between the EVSE and on-site renewable energy" },
+      { "id": "C", "text": "Connection to a network or the Internet for participation in a demand response program or time-of-use pricing" },
+      { "id": "D", "text": "Located outdoors and not in a garage" }
+    ],
+    "answers": ["C"],
+    "multi": 1
+  },
+  {
+    "text": "An office building includes 100 full-time equivalent (FTE) employees and 50 daily visitors. The parking lot will have 50 employee parking spaces and 10 visitor parking spaces. How many spaces, and of what type, are needed for LT Credit-Green Vehicles?",
+    "options": [
+      { "id": "A", "text": "2 preferred parking spaces and 1 alternative-fuel fueling station space" },
+      { "id": "B", "text": "3 preferred parking spaces and 2 alternative-fuel fueling station spaces" },
+      { "id": "C", "text": "3 spaces for preferred parking, 2 of which also have alternative-fuel fueling stations" },
+      { "id": "D", "text": "5 spaces for preferred parking and 3 alternative-fuel fueling station spaces" }
+    ],
+    "answers": ["B"],
+    "multi": 1
+  },
+  {
+    "text": "A Retail project has 50 employee parking spaces in the rear of the building and 500 customer parking spaces in the front of the building. How should the project team distribute fueling stations for LT Credit-Green Vehicles?",
+    "options": [
+      { "id": "A", "text": "1 fueling station in the rear of the building only" },
+      { "id": "B", "text": "9 fueling stations in the front of the building only" },
+      { "id": "C", "text": "10 parking spaces in a general preferred parking area" },
+      { "id": "D", "text": "10 fueling stations in the front of the building and 1 fueling station in the rear of the building" }
+    ],
+    "answers": ["D"],
     "multi": 1
   },
 {
@@ -991,19 +1072,470 @@ const allQuestions = [
     ],
     "answers": ["A", "C", "E"],
     "multi": 3
+  },
+{
+    "text": "What must be done to comply with IP Prerequisite-Integrative Project Planning and Design for a Healthcare project?",
+    "options": [
+      { "id": "A", "text": "A minimum 4-hour integrative design charrette must be conducted" },
+      { "id": "B", "text": "This prerequisite must be started before the schematic design phase begins" },
+      { "id": "C", "text": "At least three team members, including the owner or owner's representative, must be included on the integrated project team" },
+      { "id": "D", "text": "A commissioning agent (CxA) must be included on the integrated project team" },
+      { "id": "E", "text": "A basis of design (BOD) document must be prepared" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "A project team for a healthcare facility has completed an integrative design charrette and is preparing documents for design review. What should the team submit in order to document IP Prerequisite-Integrative Project Planning and Design?",
+    "options": [
+      { "id": "A", "text": "A narrative explaining how the health mission statement addresses the credit requirements and a plan of action" },
+      { "id": "B", "text": "Findings from water and energy analyses" },
+      { "id": "C", "text": "A simple box energy modeling analysis" },
+      { "id": "D", "text": "Meeting minutes as documented proof that the budget, schedule, and functional programmatic requirements, health mission statement, credits to target, and the LEED certification level were discussed" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "Which of the following does an integrative design charrette meant to achieve IP Prerequisite-Integrative Project Planning and Design for a Healthcare project accomplish? (select 3)",
+    "options": [
+      { "id": "A", "text": "Informs the OPR document" },
+      { "id": "B", "text": "Initiates development of the project's health mission statement" },
+      { "id": "C", "text": "Includes the contractor and facilities manager in the charrette" },
+      { "id": "D", "text": "Reduces building material toxins" },
+      { "id": "E", "text": "Identify recyclable waste streams" }
+    ],
+    "answers": ["A", "B", "C"],
+    "multi": 3
+  },
+  {
+    "text": "For IP Credit-Integrative Process, which of the following needs to be assessed by the simple box energy modeling analysis prior to completion of schematic design? (select 3)",
+    "options": [
+      { "id": "A", "text": "Makeup water demands" },
+      { "id": "B", "text": "Estimated rainfall" },
+      { "id": "C", "text": "Basic building envelope attributes" },
+      { "id": "D", "text": "Lighting levels" },
+      { "id": "E", "text": "Thermal comfort ranges" }
+    ],
+    "answers": ["C", "D", "E"],
+    "multi": 3
+  },
+  {
+    "text": "What does a project team need to submit to document IP Credit-Integrative Process?",
+    "options": [
+      { "id": "A", "text": "The USGBC's Integrative Process worksheet (energy and water analysis tabs)" },
+      { "id": "B", "text": "A detailed energy simulation based on ASHRAE 90.1-2010" },
+      { "id": "C", "text": "A narrative explaining each step in the project team's process" },
+      { "id": "D", "text": "A report with research findings from the discovery stage" },
+      { "id": "E", "text": "A list of project team members who were not included in the integrative process and the reasons why" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "A project team is working on scheduling coordination of energy and water systems for IP Credit-Integrative Process. When would it be ideal to address this?",
+    "options": [
+      { "id": "A", "text": "After construction" },
+      { "id": "B", "text": "During design development" },
+      { "id": "C", "text": "Before schematic design" },
+      { "id": "D", "text": "After conceptual design" }
+    ],
+    "answers": ["C"],
+    "multi": 1
+  },
+  {
+    "text": "Which one of the following steps should be taken in the discovery phase for water-related systems to earn IP Credit-Integrative Process?",
+    "options": [
+      { "id": "A", "text": "Initiate OPR" },
+      { "id": "B", "text": "Identify at least one nonpotable water supply source to offset at least two water demand components" },
+      { "id": "C", "text": "Conduct a simple box energy modeling analysis" },
+      { "id": "D", "text": "Identify low-flow plumbing fixtures to reduce water use more than 20% over the baseline" }
+    ],
+    "answers": ["B"],
+    "multi": 1
+  },
+{
+    "text": "Which of the following are typical commissioning activities performed by a CxA to meet EA Prerequisite-Fundamental Commissioning and Verification? (select 3)",
+    "options": [
+      { "id": "A", "text": "Performing FPT" },
+      { "id": "B", "text": "Training facility operators" },
+      { "id": "C", "text": "Performing pre-functional inspections" },
+      { "id": "D", "text": "Creating a Cx plan" },
+      { "id": "E", "text": "Conducting waste stream audits" }
+    ],
+    "answers": ["A", "C", "D"],
+    "multi": 3
+  },
+  {
+    "text": "Which one of the following documents includes key project requirements, occupant requirements, budget considerations, and sustainability goals, including energy and water efficiency targets?",
+    "options": [
+      { "id": "A", "text": "Cx report" },
+      { "id": "B", "text": "OPR" },
+      { "id": "C", "text": "BOD" },
+      { "id": "D", "text": "Systems manual" }
+    ],
+    "answers": ["B"],
+    "multi": 1
+  },
+  {
+    "text": "Which of the following building elements must be commissioned for a high-rise, multifamily project pursuing LEED Silver certification? (select 3)",
+    "options": [
+      { "id": "A", "text": "Domestic hot water systems" },
+      { "id": "B", "text": "Solar panels" },
+      { "id": "C", "text": "HVAC&R equipment and controls" },
+      { "id": "D", "text": "Life-safety systems" },
+      { "id": "E", "text": "Communications and data systems" }
+    ],
+    "answers": ["A", "B", "C"],
+    "multi": 3
+  },
+  {
+    "text": "Which one of the following systems does not have to be commissioned but must be included in the OPR per EA Prerequisite-Fundamental Commissioning and Verification?",
+    "options": [
+      { "id": "A", "text": "Building envelope" },
+      { "id": "B", "text": "Fire protection and fire alarm system" },
+      { "id": "C", "text": "Indoor plumbing fixtures" },
+      { "id": "D", "text": "Cooling towers" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "If LEED certification is pursued, which project phase is the latest that the CxA should be engaged?",
+    "options": [
+      { "id": "A", "text": "By 50% construction documents" },
+      { "id": "B", "text": "Prior to the start of construction" },
+      { "id": "C", "text": "By the end of the design development phase" },
+      { "id": "D", "text": "Prior to completion of the OPR" }
+    ],
+    "answers": ["C"],
+    "multi": 1
+  },
+  {
+    "text": "Who updates the OPR during the design and construction process?",
+    "options": [
+      { "id": "A", "text": "Owner" },
+      { "id": "B", "text": "Design team" },
+      { "id": "C", "text": "CxA" },
+      { "id": "D", "text": "Contractor" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "A project team is pursuing LEED certification for a Warehouses and Distribution Centers project. When should the design team create the BOD document?",
+    "options": [
+      { "id": "A", "text": "Prior to the creation of the OPR document" },
+      { "id": "B", "text": "At the same time the Cx plan is created" },
+      { "id": "C", "text": "During the schematic design phase" },
+      { "id": "D", "text": "At the completion of the project for submission to LEED Online" }
+    ],
+    "answers": ["C"],
+    "multi": 1
+  },
+  {
+    "text": "For which one of the following projects should the OPR address the overall energy efficiency goals of the project, including the partial- and full-load power usage effectiveness (PUE)?",
+    "options": [
+      { "id": "A", "text": "20,000 ft² elementary school addition" },
+      { "id": "B", "text": "25,000 ft² retail center" },
+      { "id": "C", "text": "50,000 ft² data center" },
+      { "id": "D", "text": "100,000 ft² core and shell office building" },
+      { "id": "E", "text": "250,000 ft² healthcare building" }
+    ],
+    "answers": ["C"],
+    "multi": 1
+  },
+  {
+    "text": "What should a CxA do as the first step of the Cx process?",
+    "options": [
+      { "id": "A", "text": "Review the OPR and BOD documents" },
+      { "id": "B", "text": "Create a Cx plan" },
+      { "id": "C", "text": "Review project submittals" },
+      { "id": "D", "text": "Create a systems manual" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "Which of the following statements are correct for construction checklists that are used for the Cx process? (select 2)",
+    "options": [
+      { "id": "A", "text": "Only the CxA may prepare the checklists" },
+      { "id": "B", "text": "Generally, the contractor is responsible for filling out the checklist and returning it to the CxA" },
+      { "id": "C", "text": "Each piece of equipment, assembly, and system does not need a checklist, and sampling strategies are permitted" },
+      { "id": "D", "text": "The checklist ensures that the systems have been installed, started up, programmed, tested, and balanced and are ready for functional testing" }
+    ],
+    "answers": ["B", "D"],
+    "multi": 2
+  },
+  {
+    "text": "Which document includes the number of occupants, their function, and the occupancy schedules for the building?",
+    "options": [
+      { "id": "A", "text": "Construction checklists" },
+      { "id": "B", "text": "BOD" },
+      { "id": "C", "text": "FPT scripts" },
+      { "id": "D", "text": "OPR" }
+    ],
+    "answers": ["D"],
+    "multi": 1
+  },
+  {
+    "text": "Energy simulation for a new hospital building results in an annual baseline energy cost of $150,000. To achieve LEED certification for EA Prerequisite-Minimum Energy Performance, how much energy-use reduction must be achieved at a minimum?",
+    "options": [
+      { "id": "A", "text": "$1,500" },
+      { "id": "B", "text": "$3,000" },
+      { "id": "C", "text": "$7,500" },
+      { "id": "D", "text": "$15,000" }
+    ],
+    "answers": ["C"],
+    "multi": 1
+  },
+  {
+    "text": "If a project team is pursuing Option 1 of EA Prerequisite-Minimum Energy Performance, data from energy modeling can be used to make decisions for which of the following EA credits? (select 3)",
+    "options": [
+      { "id": "A", "text": "Enhanced Refrigerant Management" },
+      { "id": "B", "text": "Demand Response" },
+      { "id": "C", "text": "Renewable Energy Production" },
+      { "id": "D", "text": "Green Power and Carbon Offsets" },
+      { "id": "E", "text": "Low-Emitting Materials" }
+    ],
+    "answers": ["B", "C", "D"],
+    "multi": 3
+  },
+  {
+    "text": "Which one of the following projects is eligible for Option 3 of EA Prerequisite-Minimum Energy Performance?",
+    "options": [
+      { "id": "A", "text": "50,000 ft² warehouse" },
+      { "id": "B", "text": "50,000 ft² office building" },
+      { "id": "C", "text": "75,000 ft² laboratory" },
+      { "id": "D", "text": "90,000 ft² healthcare facility" }
+    ],
+    "answers": ["B"],
+    "multi": 1
+  },
+  {
+    "text": "For a Data Centers project, baseline energy consumption is $150,000. The design case results in the minimum amount of energy savings required for a data center. How much of these savings should come from building power and cooling infrastructure?",
+    "options": [
+      { "id": "A", "text": "$1,500" },
+      { "id": "B", "text": "$3,000" },
+      { "id": "C", "text": "$4,500" },
+      { "id": "D", "text": "$7,500" }
+    ],
+    "answers": ["B"],
+    "multi": 1
+  },
+{
+    "text": "Due to unexpected expenses after energy modeling, a project team is asked to provide design alternatives to cut costs. Which of the following changes can be considered without rerunning the energy model? (select 3)",
+    "options": [
+      { "id": "A", "text": "Removing skylights" },
+      { "id": "B", "text": "Substituting LED light fixtures with fluorescent light fixtures in pantries, lobbies, and mechanical rooms" },
+      { "id": "C", "text": "Removing battery-operated sensors from water closets" },
+      { "id": "D", "text": "Providing lower-cost alternatives to interior finishes" },
+      { "id": "E", "text": "Removing exterior shade device" }
+    ],
+    "answers": ["A", "C", "D"],
+    "multi": 3
+  },
+  {
+    "text": "The energy modeler for an office building project cannot simulate exterior shade devices through a modeling program. Which action should the energy modeler take?",
+    "options": [
+      { "id": "A", "text": "Do not include the shading device in the model" },
+      { "id": "B", "text": "Use an exceptional calculation method (ECM) for energy savings as a result of the shades" },
+      { "id": "C", "text": "Provide a narrative explaining energy savings of the device, referring to relevant studies and research" },
+      { "id": "D", "text": "Follow one of the options for prescriptive-based compliance" }
+    ],
+    "answers": ["B"],
+    "multi": 1
+  },
+  {
+    "text": "What strategies can help mitigate additional energy consumption for increased ventilation in a healthcare facility?",
+    "options": [
+      { "id": "A", "text": "Using heat recovery and economizer strategies" },
+      { "id": "B", "text": "Using CO monitors" },
+      { "id": "C", "text": "Using MERV 13 filters" },
+      { "id": "D", "text": "Daylight harvesting" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "A new office building project that is pursuing LEED Silver certification has building-level metering, but the company is restricting access to the meter. Which one of the following statements is correct for this project's ability to meet EA Prerequisite-Building-Level Energy Metering?",
+    "options": [
+      { "id": "A", "text": "The project team may meet the prerequisite requirements by tracking energy usage through monthly billing" },
+      { "id": "B", "text": "The prerequisite is not met, and this project cannot be LEED certified" },
+      { "id": "C", "text": "The prerequisite is met, and the project team does not need to take any action" },
+      { "id": "D", "text": "The project team must install submeters for all energy end uses that consume 10% or more of the building's total energy use" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "Which one of the following systems must be submetered to achieve EA Credit-Advanced Energy Metering?",
+    "options": [
+      { "id": "A", "text": "Garage fans using 4% of the total annual energy use of the building" },
+      { "id": "B", "text": "Interior lighting that consumes 15% of the building's total annual energy use" },
+      { "id": "C", "text": "Exterior lighting that consumes 6% of the building's total annual energy use" },
+      { "id": "D", "text": "Split systems serving the fitness center that is used by 20% of the occupants" }
+    ],
+    "answers": ["B"],
+    "multi": 1
+  },
+  {
+    "text": "A 12-story Core and Shell project utilizes both electricity and natural gas. Natural gas consumption is less than 10% of total annual energy consumption. If EA Credit-Advanced Energy Metering is pursued, which one of the following statements is correct?",
+    "options": [
+      { "id": "A", "text": "The system must be capable of storing data for 36 months" },
+      { "id": "B", "text": "Only one meter for each energy source is required for the whole building" },
+      { "id": "C", "text": "Advanced energy metering is required for the natural gas consumption" },
+      { "id": "D", "text": "All meters in the system only need to be capable of reporting annual energy use" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "A project team wants to submeter the individual energy end uses of a six-story office building. If the team pursues one of the prescriptive options for EA Prerequisite-Minimum Energy Performance, which one of the following strategies can help them earn EA Credit-Advanced Energy Metering?",
+    "options": [
+      { "id": "A", "text": "Submetering all energy related systems within the building" },
+      { "id": "B", "text": "Reviewing CBECS to determine which end uses to submeter" },
+      { "id": "C", "text": "Installing building-level metering that can store data for 36 months" },
+      { "id": "D", "text": "Submetering each mechanical zone of the building" }
+    ],
+    "answers": ["B"],
+    "multi": 1
+  },
+  {
+    "text": "For a new construction office building project pursuing EA Credit-Advanced Energy Metering, which of the following statements are correct? (select 3)",
+    "options": [
+      { "id": "A", "text": "Meters may be temporary" },
+      { "id": "B", "text": "Electricity meters must record both consumption and demand" },
+      { "id": "C", "text": "The system must be capable of storing all meter data for at least 36 months" },
+      { "id": "D", "text": "All end uses must be submetered" },
+      { "id": "E", "text": "Metering data must be remotely accessible" }
+    ],
+    "answers": ["B", "C", "E"],
+    "multi": 3
+  },
+  {
+    "text": "Which of the following should be included in documentation for EA Prerequisite-Fundamental Refrigerant Management for a renovation project with existing equipment? (select 2)",
+    "options": [
+      { "id": "A", "text": "Confirmation that no new or existing equipment contain CFCs" },
+      { "id": "B", "text": "A CFC conversion or replacement plan" },
+      { "id": "C", "text": "Ozone depletion potential (ODP) for refrigerants in existing and new equipment" },
+      { "id": "D", "text": "Global warming potential (GWP) for refrigerants in existing and new equipment" }
+    ],
+    "answers": ["A", "B"],
+    "multi": 2
+  },
+  {
+    "text": "The mechanical engineer of a project is planning to propose a variable refrigerant flow (VRF) system. Which of the following trade-offs should the mechanical engineer mention to the owner?",
+    "options": [
+      { "id": "A", "text": "VRF systems have a high GWP" },
+      { "id": "B", "text": "VRF systems do not comply with EA Credit-Enhanced Refrigerant Management" },
+      { "id": "C", "text": "VRF systems cannot be included in energy modeling" },
+      { "id": "D", "text": "VRF systems require a higher refrigerant charge" }
+    ],
+    "answers": ["D"],
+    "multi": 1
+  },
+  {
+    "text": "A project team is pursuing EA Credit-Enhanced Refrigerant Management for a new construction grocery store. The project team has provided confirmation that only low-impact refrigerants are used. Which one of the following should also be provided for documentation?",
+    "options": [
+      { "id": "A", "text": "Refrigerant equipment schedule and leak test results for commercial refrigeration systems" },
+      { "id": "B", "text": "No additional submittals necessary" },
+      { "id": "C", "text": "Refrigerant charge calculations" },
+      { "id": "D", "text": "HVAC&R equipment life and supporting documentation" }
+    ],
+    "answers": ["A"],
+    "multi": 1
+  },
+  {
+    "text": "Which of the following strategies are eligible for achieving EA Credit-Demand Response? (select 3)",
+    "options": [
+      { "id": "A", "text": "When a DR event is called, a building operator manually turns off end-use systems" },
+      { "id": "B", "text": "When a DR event is called, the DR coordinator initiates the control strategy that is programmed into the BAS" },
+      { "id": "C", "text": "When a DR event is called, the BAS control sequence initiates its strategy without human intervention" },
+      { "id": "D", "text": "The project participates in a DR program for 15% of peak electricity demand and conducts one full test of the DR plan for fundamental Cx" },
+      { "id": "E", "text": "When a DR event is called, individual building occupants turn off their end-use systems" }
+    ],
+    "answers": ["B", "C", "D"],
+    "multi": 3
+  },
+  {
+    "text": "Which of the following are suitable DR strategies for a hotel building? (select 3)",
+    "options": [
+      { "id": "A", "text": "Turning off decorative features, like fountains and video displays" },
+      { "id": "B", "text": "Rescheduling housekeeping activities, such as dishwashing and laundry" },
+      { "id": "C", "text": "Using backup generators to generate on-site electricity" },
+      { "id": "D", "text": "Turning off the air conditioning during hot summer days" },
+      { "id": "E", "text": "Global temperature adjustments, increasing cooling setpoints or decreasing heating setpoints for a given period" }
+    ],
+    "answers": ["A", "B", "E"],
+    "multi": 3
+  },
+  {
+    "text": "Which of the following are required for a Core and Shell project that is utilizing a solar garden to achieve EA Credit-Renewable Energy Production? (select 2)",
+    "options": [
+      { "id": "A", "text": "The project must sign a lease agreement for a period of at least 10 years" },
+      { "id": "B", "text": "The renewable energy system must be located within the same utility service area as the project" },
+      { "id": "C", "text": "The project does not need to have ownership or a lease agreement for the renewable system" },
+      { "id": "D", "text": "This project cannot claim this credit, since solar gardens and community renewable energy systems are not allowed for the credit" }
+    ],
+    "answers": ["A", "B"],
+    "multi": 2
+  },
+  {
+    "text": "A project team needs to achieve 2 points by designing and implementing solar panels on the roof of a Core and Shell project. According to the CBECS database, the project is estimated to use 100,000 kWh/month. Energy costs in the area are $0.10/kWh. How much renewable energy should be produced in a year to earn 2 points for EA Credit-Renewable Energy Production?",
+    "options": [
+      { "id": "A", "text": "$5000 worth of energy" },
+      { "id": "B", "text": "$5,000 of energy" },
+      { "id": "C", "text": "$6000 kWh of energy" },
+      { "id": "D", "text": "$6,000 of energy" }
+    ],
+    "answers": ["D"],
+    "multi": 1
+  },
+  {
+    "text": "Qualified resources for EA Credit-Green Power and Carbon Offsets must have come online since which date?",
+    "options": [
+      { "id": "A", "text": "December 31, 2003" },
+      { "id": "B", "text": "January 1st, 2005" },
+      { "id": "C", "text": "November 15th, 2009" },
+      { "id": "D", "text": "November 15th, 2014" }
+    ],
+    "answers": ["B"],
+    "multi": 1
+  },
+  {
+    "text": "The CBECS database can be utilized for which of the following EA credits? (select 2)",
+    "options": [
+      { "id": "A", "text": "Green Power and Carbon Offsets" },
+      { "id": "B", "text": "Credit Demand Response" },
+      { "id": "C", "text": "Enhanced Refrigerant Management" },
+      { "id": "D", "text": "Enhanced Commissioning" }
+    ],
+    "answers": ["A", "B"],
+    "multi": 2
+  },
+  {
+    "text": "Which one of the following options can be used to mitigate both Scope 1 and Scope 2 emissions for EA Credit-Green Power and Carbon Offsets?",
+    "options": [
+      { "id": "A", "text": "Green power" },
+      { "id": "B", "text": "Carbon offsets" },
+      { "id": "C", "text": "RECs or green power" },
+      { "id": "D", "text": "RECs" }
+    ],
+    "answers": ["B"],
+    "multi": 1
   }
 ];
-
-// The preview includes the first 10 questions to keep the canvas responsive.
-const uniqueQuestions = [];
-const seenQuestions = new Set();
-allQuestions.forEach(q => {
-  const key = q.text.trim();
-  if (!seenQuestions.has(key)) {
-    seenQuestions.add(key);
-    uniqueQuestions.push(q);
+	const uniqueQuestions = [];
+ 	const seenQuestions = new Set();
+	allQuestions.forEach(q => {
+  	 const key = q.text.trim();
+ 	 if (!seenQuestions.has(key)) {
+   	  seenQuestions.add(key);
+    	  uniqueQuestions.push(q);
   }
 });
+
 
 let currentPool = [];
 let currentIndex = 0;
@@ -1031,10 +1563,13 @@ function getQuestionSet(setName) {
   if (setName === 'chapter1') return uniqueQuestions.slice(0, 7);   // 1–7
   if (setName === 'chapter2') return uniqueQuestions.slice(7, 16);  // 8–16
   if (setName === 'chapter3') return uniqueQuestions.slice(16, 37); // 17–37
-  if (setName === 'chapter4') return uniqueQuestions.slice(37, 50); // 38–50
-  if (setName === 'chapter5') return uniqueQuestions.slice(50, 67); // 51–67
-  if (setName === 'chapter6') return uniqueQuestions.slice(67, 78); // 68–78
-  return uniqueQuestions.slice(0, 78); // all questions
+  if (setName === 'chapter4') return uniqueQuestions.slice(37, 56); // 38–56
+  if (setName === 'chapter5') return uniqueQuestions.slice(56, 73); // 57–73
+  if (setName === 'chapter6') return uniqueQuestions.slice(73, 84); // 74–84
+  if (setName === 'chapter7') return uniqueQuestions.slice(84, 91); // 85–91
+  if (setName === 'chapter8') return uniqueQuestions.slice(91, 106); // 92–106
+  if (setName === 'chapter9') return uniqueQuestions.slice(106, 124); // 107–124
+  return uniqueQuestions.slice(0, 124); // all questions
 }
 
 function startExam(setName = selectedQuestionSet) {
